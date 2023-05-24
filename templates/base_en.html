@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang='{{ lang }}'>
+{% block head %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='favicon/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
+          rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://kit.fontawesome.com/5ab6aa530f.js" crossorigin="anonymous"></script>
+    <title>Solovei Dmytro - Personal Site</title>
+</head>
+{% endblock %}
+<body>
+{% block content %}
+<div id="content" class="sticky-top">
+    <div class="d-flex text-bg-secondary flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <ul style="padding-left: 2%" class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="{{ url_for('home', lang=lang) }}"><img class="logo hover-effect"
+                                                                src="{{ url_for('static', filename='logo/logo.png') }}"
+                                                                alt="Dmytro Solovei Logo"></a></li>
+            <li><a href="{{ url_for('home', lang=lang) }}"
+                   class="nav-link px-2  hover-effect font-sacramento">Dmytro Solovei</a></li>
+        </ul>
+        <div style="float: right; padding-right: 2%"
+             class="d-flex text-bg-secondary flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="{{ url_for('switch_lang', lang='uk') }}"
+                       class="nav-link px-0 text-white hover-effect uk-lang"><img id="uk-lang"
+                                                                                  style="width: 50%; height: 50%"
+                                                                                  src="{{ url_for('static', filename='img/ukraine.png') }}"
+                                                                                  alt="ukrainian_language_image"></a>
+                </li>
+                </li>
+                <li><a href="{{ url_for('switch_lang', lang='en') }}"
+                       class="nav-link px-0 text-white hover-effect uk-lang"><img id="en-lang"
+                                                                                  style="width: 50%; height: 50%"
+                                                                                  src="{{ url_for('static', filename='img/english.png') }}"
+                                                                                  alt="english_language_image"></a></li>
+                <li><a href="{{ url_for('home',lang=lang) }}"
+                       class="nav-link px-2 text-white font-garamond hover-effect">Home</a></li>
+                <li><a href="{{ url_for('download', name='CV_Dmytro_Solovei.pdf') }}"
+                       class="nav-link px-2 text-white font-garamond hover-effect">Download CV</a></li>
+                <li><a href="#certificates"
+                       class="nav-link px-2 text-white font-garamond hover-effect">Certificates</a>
+                </li>
+                <li><a href="#contacts"
+                       class="nav-link px-2 text-white font-garamond hover-effect">Contact Me</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<footer style="background-color: #fffaf0;"
+        class="fixed-bottom d-flex flex-wrap justify-content-between align-items-center py-0 my-0 border-top">
+    <div style="float: left; padding-left: 2%" class="col-md-4 d-flex align-items-center">
+        <span class="mb-md-0 text-muted"><em>© {{ now.year }}, Dmytro Solovei</em></span>
+    </div>
+    <div class="col-md-4 d-flex align-items-center" style="display: flex; justify-content: center">
+        <a href="{{ url_for('home', lang=lang) }}"><img class="footer-logo hover-effect"
+                                                        src="{{ url_for('static', filename='logo/logo.png') }}"
+                                                        alt="Dmytro Solovei Logo"></a>
+    </div>
+
+    <ul style="float: right; padding-right: 2%; padding-bottom: 0.3rem" class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-2"><a class="text-body-secondary" href="mailto:solovei.dmytro@gmail.com">
+            <i class="fa fa-envelope footer-icons fa-xl hover-effect"></i>
+        </a></li>
+        <li class="ms-2"><a class="text-body-secondary" href="https://www.linkedin.com/in/dimasolo/">
+            <i class="fa-brands fa-linkedin footer-icons fa-xl hover-effect"></i>
+        </a></li>
+        <li class="ms-2"><a class="text-body-secondary" href="https://www.facebook.com/DimaSolovei1986">
+            <i class="fa-brands fa-square-facebook footer-icons fa-xl hover-effect"></i>
+        </a></li>
+        <li class="ms-2"><a class="text-body-secondary" href="skype:dimasolovey1986?chat">
+            <i class="fa fa-skype footer-icons fa-xl hover-effect" aria-hidden="true"></i>
+        </a></li>
+        <li class="ms-2"><a class="text-body-secondary" href="tg://resolve?domain=dimasolovei1986">
+            <i class="fa fa-telegram footer-icons fa-xl hover-effect" aria-hidden="true"></i>
+        </a></li>
+    </ul>
+</footer>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+        crossorigin="anonymous"></script>
+</body>
+</html>
