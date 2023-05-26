@@ -95,6 +95,18 @@
         </a></li>
     </ul>
 </footer>
+<script>
+    var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("content").style.top = "0";
+  } else {
+    document.getElementById("content").style.top = "-100%";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
 <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
