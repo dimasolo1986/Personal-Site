@@ -46,11 +46,7 @@ def get_locale():
 
 @app.route('/switch_lang/<lang>', methods=['GET', 'POST'])
 def switch_lang(lang):
-    if request.referrer.split("/")[-1]:
-        # redirect to the same page but with a different lang parameter
-        return redirect(url_for(request.referrer.split("/")[-1], lang=lang))
-    else:
-        return redirect(url_for('home', lang=lang))
+    return redirect(url_for('home', lang=lang))
 
 
 @app.route('/')
