@@ -76,9 +76,10 @@ def contact(lang=app.config['BABEL_DEFAULT_LOCALE']):
             return render_template(template_name_or_list="contacts_uk.html", lang=lang)
 
 
-@app.route('/uploads/<path:name>', methods=['GET', 'POST'])
+@app.route('/uploads/<name>', methods=['GET', 'POST'])
 def download(name):
-    return send_from_directory(app.config['UPLOAD_FOLDER'], name, as_attachment=True)
+    file_base_path = os.path.join('static', 'cv')
+    return send_from_directory(file_base_path, name, as_attachment=True)
 
 
 if __name__ == "__main__":
