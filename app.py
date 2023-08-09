@@ -17,7 +17,7 @@ LANGUAGES = {
 SKILLS_DICT = {
     "Programming Languages/Technologies": ["Java EE/Servlets/JPA/REST", "Java/JDBC/Maven/Gradle",
                                            "Software Architecture Design/Design Patterns",
-                                           "Swing", "XML/JSON", "HTML/CSS/Bootstrap", "SQL", "Python",
+                                           "Swing", "XML/JSON", "HTML/CSS/Bootstrap", "SQL", "Python", "JavaScript"
                                            "LabView"],
     "Frameworks/Libraries": ["Spring", "Hibernate", "Lombok", "Google GRPC", "Junit", "Mockito", "Selenium (Automation)", "Robot Framework (Automation)",
                              "Flask (Python Web)"],
