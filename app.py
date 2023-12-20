@@ -28,7 +28,7 @@ SKILLS_DICT = {
     "Methodologies": ["Agile, Scrum"],
     "Operating Systems": ["Microsoft Windows", "Linux"],
     "Application/Web Servers": ["Tomcat"],
-    "Cloud": ["Microsoft Azure"],
+    "Cloud": ["Microsoft Azure", "AWS"],
     "Development Tools": ["IntelliJ IDEA", "Eclipse", "PyCharm"]
 }
 
