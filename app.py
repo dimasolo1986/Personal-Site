@@ -21,7 +21,7 @@ SKILLS_DICT = {
                                            "LabView"],
     "Frameworks/Libraries": ["Spring", "Hibernate", "Lombok", "Google GRPC", "Junit", "Mockito", "Selenium (Automation)", "Robot Framework (Automation)",
                              "Flask (Python Web)"],
-    "RDBMS": ["MySQL", "PostgreSQL", "C-tree"],
+    "RDBMS": ["MySQL", "PostgreSQL", "Redis", "C-tree"],
     "CI/CD/Version Control": ["TeamCity", "Bitbucket", "Artifactory", "GitHub"],
     "Testing Tools": ["Postman", "SoapUI", "BloomRPC"],
     "Virtualization Tools": ["Docker"],
