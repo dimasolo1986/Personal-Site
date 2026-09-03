@@ -1,40 +1,31 @@
-<div style="margin-top: 0.5rem;" class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-5">
-            <div class="card border-4">
-                <div class="card-body text-muted">
-                    <div class="form-group text-center mb-1">
-                        <h6 class="text-center mb-1"><b>Email - solovei.dmytro@gmail.com</b></h6>
-                        <a class="text-body-secondary hover-effect" href="mailto:solovei.dmytro@gmail.com"><img class="contacts"
-                                src="{{url_for('static', filename='img/email.png')}}" alt="email_image"></a>
-                    </div>
-                    <div class="form-group text-center mb-1">
-                        <h6 class="text-center mb-1"><b>LinkedIn</b></h6>
-                        <a class="text-body-secondary hover-effect" href="https://www.linkedin.com/in/dimasolo/"><img class="contacts"
-                                src="{{url_for('static', filename='img/linkedin.png')}}" alt="linkedIn_image"></a>
-                    </div>
-                    <div class="form-group text-center mb-1">
-                        <h6 class="text-center mb-1"><b>Facebook</b></h6>
-                        <a class="text-body-secondary hover-effect" href="https://www.facebook.com/DimaSolovei1986"><img class="contacts"
-                                src="{{url_for('static', filename='img/facebook.png')}}" alt="facebook_image"></a>
-                    </div>
-                    <div class="form-group text-center mb-1">
-                        <h6 class="text-center mb-1"><b>Skype</b></h6>
-                        <a class="text-body-secondary hover-effect" href="skype:dimasolovey1986?chat"><img class="contacts"
-                                src="{{url_for('static', filename='img/skype.png')}}" alt="skype_image"></a>
-                    </div>
-                    <div class="form-group text-center mb-1">
-                        <h6 class="text-center mb-1"><b>Telegram</b></h6>
-                        <a class="text-body-secondary hover-effect" href="tg://resolve?domain=dimasolovei1986"><img class="contacts"
-                                src="{{url_for('static', filename='img/telegram.png')}}" alt="telegram_image"></a>
-                    </div>
-                    <div class="form-group text-center mb-1">
-                        <a href="mailto:solovei.dmytro@gmail.com">
-                            <button type="submit" class="btn btn-secondary hover-effect mt-2">Відправити Лист</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{# Partial: included by index_uk.html and rendered directly by the /<lang>/contact route. #}
+<div class="contact-grid">
+    <a class="contact-card" href="mailto:solovei.dmytro@gmail.com">
+        <img class="contacts" src="{{url_for('static', filename='img/email.png')}}" alt="email_image">
+        <h6 class="contact-label">Email</h6>
+        <p class="contact-value">solovei.dmytro@gmail.com</p>
+    </a>
+    <a class="contact-card" href="https://www.linkedin.com/in/dimasolo/">
+        <img class="contacts" src="{{url_for('static', filename='img/linkedin.png')}}" alt="linkedIn_image">
+        <h6 class="contact-label">LinkedIn</h6>
+        <p class="contact-value">in/dimasolo</p>
+    </a>
+    <a class="contact-card" href="https://www.facebook.com/DimaSolovei1986">
+        <img class="contacts" src="{{url_for('static', filename='img/facebook.png')}}" alt="facebook_image">
+        <h6 class="contact-label">Facebook</h6>
+        <p class="contact-value">DimaSolovei1986</p>
+    </a>
+    <a class="contact-card" href="skype:dimasolovey1986?chat">
+        <img class="contacts" src="{{url_for('static', filename='img/skype.png')}}" alt="skype_image">
+        <h6 class="contact-label">Skype</h6>
+        <p class="contact-value">dimasolovey1986</p>
+    </a>
+    <a class="contact-card" href="tg://resolve?domain=dimasolovei1986">
+        <img class="contacts" src="{{url_for('static', filename='img/telegram.png')}}" alt="telegram_image">
+        <h6 class="contact-label">Telegram</h6>
+        <p class="contact-value">dimasolovei1986</p>
+    </a>
+</div>
+<div class="section-actions">
+    <a href="mailto:solovei.dmytro@gmail.com" class="btn btn-secondary">Відправити Лист</a>
 </div>

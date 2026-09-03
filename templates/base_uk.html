@@ -4,8 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet"
-          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script>document.documentElement.classList.add('js');</script>
+    <!-- Self-hosted Bootstrap: no integrity/crossorigin. The hashes that used to be here were
+         for a different (CDN) build and made the browser block these files outright. -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="apple-touch-icon" sizes="180x180"
           href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
@@ -17,22 +19,16 @@
     <link rel="mask-icon" href="{{ url_for('static', filename='favicon/safari-pinned-tab.svg') }}" color="#5bbad5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
           rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&amp;family=Montserrat&amp;family=Sacramento&amp;display=swap" rel="stylesheet">
     <!-- Font Awesome CSS -->
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <meta name="description" content="Solovei Dmytro Software Developer Personal Site Соловей Дмитро Персональний сайт">
     <meta name="google-site-verification" content="MP6knESgg8huKzPQW-O0QlR-ycXBR18TNBEV9Q0pVOE" />
-    <script defer src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
-        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
-        crossorigin="anonymous"></script>
-    <script defer src="{{ url_for('static', filename='js/bootstrap.min.js') }}"
-        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
-        crossorigin="anonymous"></script>
+    <!-- bundle already contains Popper + all of Bootstrap's JS -->
+    <script defer src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     <script defer src="https://kit.fontawesome.com/5ab6aa530f.js" crossorigin="anonymous"></script>
     <title>Соловей Дмитро - Персональний Сайт</title>
 </head>
@@ -40,82 +36,94 @@
 <body>
 {% block content %}
 <div id="content" class="sticky-top">
-    <div class="d-flex text-bg-secondary flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <ul style="padding-left: 2%" class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="{{ url_for('home', lang=lang) }}"><img class="logo hover-effect"
-                                                                src="{{ url_for('static', filename='logo/logo.png') }}"
-                                                                alt="Dmytro Solovei Logo"></a></li>
-            <li><a href="{{ url_for('home', lang=lang) }}"
-                   class="nav-link px-2  hover-effect font-sacramento">Dmytro Solovei</a></li>
-        </ul>
-        <div style="float: right; padding-right: 2%"
-             class="d-flex text-bg-secondary flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="{{ url_for('switch_lang', lang='uk') }}"
-                       class="nav-link px-0 text-white hover-effect uk-lang"><img id="uk-lang"
-                                                                                  style="width: 50%; height: 50%"
-                                                                                  src="{{ url_for('static', filename='img/ukraine.png') }}"
-                                                                                  alt="ukrainian_language_image"></a>
-                </li>
-                <li><a href="{{ url_for('switch_lang', lang='en') }}"
-                       class="nav-link px-0 text-white hover-effect en-lang"><img id="ek-lang"
-                                                                                  style="width: 50%; height: 50%"
-                                                                                  src="{{ url_for('static', filename='img/english.png') }}"
-                                                                                  alt="english_language_image"></a></li>
-                <li><a href="{{ url_for('home', lang=lang) }}"
-                       class="nav-link px-2 text-white font-garamond hover-effect">Головна</a></li>
-                <li><a href="{{ url_for('download', name='CV_Dmytro_Solovei.pdf') }}"
-                       class="nav-link px-2 text-white font-garamond hover-effect">Завантажити Резюме</a></li>
-                <li><a href="#certificates"
-                       class="nav-link px-2 text-white font-garamond hover-effect">Сертифікати</a>
-                </li>
-                <li><a href="#contacts"
-                       class="nav-link px-2 text-white font-garamond hover-effect">Зв'язатися</a></li>
+    <header class="site-header">
+        <div class="container-xl nav-inner">
+            <a class="brand" href="{{ url_for('home', lang=lang) }}">
+                <img class="logo hover-effect" src="{{ url_for('static', filename='logo/logo.png') }}"
+                     alt="Dmytro Solovei Logo">
+                <span class="brand-name font-sacramento">Dmytro Solovei</span>
+            </a>
+            <ul class="lang-switch">
+                <li><a href="{{ url_for('switch_lang', lang='uk') }}" class="nav-link is-active uk-lang"
+                       aria-label="Українська"><img id="uk-lang"
+                                                    src="{{ url_for('static', filename='img/ukraine.png') }}"
+                                                    alt="ukrainian_language_image"></a></li>
+                <li><a href="{{ url_for('switch_lang', lang='en') }}" class="nav-link en-lang"
+                       aria-label="English"><img id="en-lang"
+                                                 src="{{ url_for('static', filename='img/english.png') }}"
+                                                 alt="english_language_image"></a></li>
             </ul>
+            <nav class="nav-scroll" aria-label="Головне меню">
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('home', lang=lang) }}" class="nav-link font-garamond">Головна</a></li>
+                    <li><a href="#certificates" class="nav-link font-garamond">Сертифікати</a></li>
+                    <li><a href="#contacts" class="nav-link font-garamond">Зв'язатися</a></li>
+                    <li><a href="{{ url_for('download', name='CV_Dmytro_Solovei.pdf') }}"
+                           class="btn btn-secondary nav-cta">Завантажити Резюме</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
+    </header>
 </div>
 {% endblock %}
-<footer style="background-color: #fffaf0; padding-bottom: 3%"
-        class="fixed-bottom d-flex flex-wrap justify-content-between align-items-center py-0 my-0 border-top">
-    <div style="float: left; padding-left: 2%" class="col-md-4 d-flex align-items-center">
-        <span class="mb-md-0 text-muted"><em>© {{ now.year }}, Дмитро Соловей </em></span>
-    </div>
-    <div class="col-md-4 d-flex align-items-center" style="display: flex; justify-content: center">
-        <a href="{{ url_for('home', lang=lang) }}"><img class="footer-logo hover-effect"
+{% block footer %}
+<footer class="site-footer">
+    <div class="container-xl footer-inner">
+        <p class="footer-copy">© {{ now.year }}, Дмитро Соловей</p>
+        <a href="{{ url_for('home', lang=lang) }}"><img class="footer-logo"
                                                         src="{{ url_for('static', filename='logo/logo.png') }}"
                                                         alt="Dmytro Solovei Logo"></a>
+        <ul class="footer-social">
+            <li><a href="mailto:solovei.dmytro@gmail.com" aria-label="Email">
+                <i class="fa fa-envelope footer-icons"></i>
+            </a></li>
+            <li><a href="https://www.linkedin.com/in/dimasolo/" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin footer-icons"></i>
+            </a></li>
+            <li><a href="https://www.facebook.com/DimaSolovei1986" aria-label="Facebook">
+                <i class="fa-brands fa-square-facebook footer-icons"></i>
+            </a></li>
+            <li><a href="skype:dimasolovey1986?chat" aria-label="Skype">
+                <i class="fa fa-skype footer-icons" aria-hidden="true"></i>
+            </a></li>
+            <li><a href="tg://resolve?domain=dimasolovei1986" aria-label="Telegram">
+                <i class="fa fa-telegram footer-icons" aria-hidden="true"></i>
+            </a></li>
+        </ul>
     </div>
-
-    <ul style="float: right; padding-right: 2%; padding-bottom: 0.3rem" class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-2"><a class="text-body-secondary" href="mailto:solovei.dmytro@gmail.com">
-            <i class="fa fa-envelope footer-icons fa-xl hover-effect"></i>
-        </a></li>
-        <li class="ms-2"><a class="text-body-secondary" href="https://www.linkedin.com/in/dimasolo/">
-            <i class="fa-brands fa-linkedin footer-icons fa-xl hover-effect"></i>
-        </a></li>
-        <li class="ms-2"><a class="text-body-secondary" href="https://www.facebook.com/DimaSolovei1986">
-            <i class="fa-brands fa-square-facebook footer-icons fa-xl hover-effect"></i>
-        </a></li>
-        <li class="ms-2"><a class="text-body-secondary" href="skype:dimasolovey1986?chat">
-            <i class="fa fa-skype footer-icons fa-xl hover-effect" aria-hidden="true"></i>
-        </a></li>
-        <li class="ms-2"><a class="text-body-secondary" href="tg://resolve?domain=dimasolovei1986">
-            <i class="fa fa-telegram footer-icons fa-xl hover-effect" aria-hidden="true"></i>
-        </a></li>
-    </ul>
 </footer>
+{% endblock %}
 <script>
-    var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("content").style.top = "0";
-  } else {
-    document.getElementById("content").style.top = "-100%";
-  }
-  prevScrollpos = currentScrollPos;
-}
+    (function () {
+        var header = document.getElementById("content");
+        var prevScrollpos = window.pageYOffset;
+
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos || currentScrollPos < 10) {
+                header.style.top = "0";
+            } else {
+                header.style.top = "-100%";
+            }
+            header.classList.toggle("is-scrolled", currentScrollPos > 8);
+            prevScrollpos = currentScrollPos;
+        };
+
+        var reveals = [].slice.call(document.querySelectorAll(".reveal"));
+        if (!("IntersectionObserver" in window)) {
+            reveals.forEach(function (el) { el.classList.add("is-visible"); });
+            return;
+        }
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {rootMargin: "0px 0px -40px 0px", threshold: 0});
+        reveals.forEach(function (el) { observer.observe(el); });
+    })();
 </script>
 </body>
 </html>

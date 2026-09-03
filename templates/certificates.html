@@ -1,46 +1,35 @@
-<div style="margin-top: 1rem" id="carouselExampleControlsNoTouching" class="carousel carousel-dark slide" data-bs-touch="false">
+{# Single source of truth for the certificate carousel.
+   Included by index_en/uk.html and by the standalone certificates_en/uk.html pages.
+   To add a certificate: drop the image in static/certificates/ and add one row here. #}
+{% set certificates = [
+    ('Java_Oracle_2019.jpg', 'Oracle_certificate_image'),
+    ('Spring_2023.jpg', 'Spring_2023_certificate_image'),
+    ('Java_Data_Structures_Algorithms.jpg', 'Java_Data_Structures_Algorithms_2023_certificate_image'),
+    ('Java_Design_Patterns_SOLID_Certificate.jpg', 'Java_Design_Patterns_SOLID_Certificate_image'),
+    ('JavaScript_Certificate_2024.jpg', 'JavaScript_Certificate_image'),
+    ('AWS_Developer_Associate_Certificate.jpg', 'AWS_Developer_Associate_certificate_image'),
+    ('AI_Engineer_Course_2026.jpg', 'AI_Engineer_Course_2026_image'),
+    ('Python_Bootcamp_Pro_2023.jpg', 'Python_2023_certificate_image'),
+    ('Python_Bootcamp_Pro_2022.jpg', 'Python_2022_certificate_image'),
+    ('Java_INTUIT_2015.jpg', 'Java_INTUIT_certificate_image')
+] %}
+<div id="carouselExampleControlsNoTouching" class="carousel carousel-dark slide" data-bs-touch="false">
+    <div class="carousel-indicators">
+        {% for filename, description in certificates %}
+        <button type="button" data-bs-target="#carouselExampleControlsNoTouching"
+                data-bs-slide-to="{{ loop.index0 }}"
+                {% if loop.first %}class="active" aria-current="true"{% endif %}
+                aria-label="{{ description }}"></button>
+        {% endfor %}
+    </div>
     <div class="carousel-inner">
-
-        <div class="carousel-item active">
-            <img src="{{ url_for('static', filename='certificates/Java_Oracle_2019.jpg') }}" class="d-block w-75"
-                 alt="Oracle_certificate_image">
+        {% for filename, description in certificates %}
+        <div class="carousel-item{% if loop.first %} active{% endif %}">
+            {# first slide is eager so the carousel never collapses while it loads #}
+            <img src="{{ url_for('static', filename='certificates/' + filename) }}" class="d-block"
+                 alt="{{ description }}"{% if not loop.first %} loading="lazy"{% endif %}>
         </div>
-        <div class="carousel-item">
-            <img src="{{ url_for('static', filename='certificates/Spring_2023.jpg') }}" class="d-block w-75"
-                 alt="Spring_2023_certificate_image">
-        </div>
-        <div class="carousel-item">
-            <img src="{{ url_for('static', filename='certificates/Java_Data_Structures_Algorithms.jpg') }}" class="d-block w-75"
-                 alt="Java_Data_Structures_Algorithms_2023_certificate_image">
-        </div>
-         <div class="carousel-item">
-            <img src="{{ url_for('static', filename='certificates/Java_Design_Patterns_SOLID_Certificate.jpg') }}" class="d-block w-75"
-                 alt="Java_Design_Patterns_SOLID_Certificate_image">
-        </div>
-         <div class="carousel-item">
-            <img src="{{ url_for('static', filename='certificates/JavaScript_Certificate_2024.jpg') }}" class="d-block w-75"
-                 alt="JavaScript_Certificate_image">
-        </div>
-         <div class="carousel-item">
-            <img src="{{ url_for('static', filename='certificates/AWS_Developer_Associate_Certificate.jpg') }}" class="d-block w-75"
-                 alt="AWS_Developer_Associate_certificate_image">
-        </div>
-        <div class="carousel-item">
-            <img src="{{ url_for('static', filename='certificates/AI_Engineer_Course_2026.jpg') }}" class="d-block w-75"
-                 alt="AI_Engineer_Course_2026_image">
-        </div>
-        <div class="carousel-item">
-            <img src="{{ url_for('static', filename='certificates/Python_Bootcamp_Pro_2023.jpg') }}"
-                 class="d-block w-75" alt="Python_2023_certificate_image">
-        </div>
-        <div class="carousel-item">
-            <img src="{{ url_for('static', filename='certificates/Python_Bootcamp_Pro_2022.jpg') }}"
-                 class="d-block w-75" alt="Python_2022_certificate_image">
-        </div>
-        <div class="carousel-item">
-            <img src="{{ url_for('static', filename='certificates/Java_INTUIT_2015.jpg') }}" class="d-block w-75"
-                 alt="Java_INTUIT_certificate_image">
-        </div>
+        {% endfor %}
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
             data-bs-slide="prev">
