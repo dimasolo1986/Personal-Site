@@ -16,7 +16,7 @@
                 <div class="hero-copy reveal">
                     <h3 class="eyebrow"><span class="dot"></span>Senior Backend Java Software Developer</h3>
                     <h1 class="hero-title">About Me</h1>
-                    <p class="hero-lead" style="text-align: justify;">Hello, my name is Dmytro. I am Senior Java
+                    <p class="hero-lead" style="text-align: justify;">Hello, my name is Dima. I am Senior Java
                         Developer with more than {{ work_experience }} years of experience.I worked on the development
                         of software for the nuclear industry, GPS systems, telephony, and in the field of public safety
                         (police, emergency service, etc.,).
@@ -30,13 +30,14 @@
                         <a href="#experience" class="pill-link">Experience</a>
                         <a href="#certificates" class="pill-link">Certificates</a>
                         <a href="#hobbies" class="pill-link">Hobbies</a>
+                        <a href="#projects" class="pill-link">Projects</a>
                         <a href="#contacts" class="pill-link">Contacts</a>
                     </div>
                 </div>
                 <figure class="hero-figure reveal reveal-delay-1">
                     <img src="{{ url_for('static', filename='img/Dmytro_Solovei.jpg') }}"
                          class="hero-photo"
-                         alt="Dmytro Solovei photo" loading="lazy">
+                         alt="Dima Solovei photo" loading="lazy">
                 </figure>
             </div>
         </div>
@@ -218,12 +219,99 @@
                     <img src="{{url_for('static', filename='img/war-history.png')}}" alt="History of World War II">
                     <span>History of World War II</span>
                 </div>
+                <div class="hobby-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9 3 3 5.5v15L9 18l6 3 6-2.5v-15L15 6 9 3Z"/>
+                        <path d="M9 3v15"/>
+                        <path d="M15 6v15"/>
+                    </svg>
+                    <span>Geography</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= PROJECTS ============================= -->
+    <section id="projects" class="section">
+        <div class="container-xl">
+            <div class="section-head reveal">
+                <span class="section-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M3 12h18"/>
+                        <path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/>
+                    </svg>
+                </span>
+                <h2 class="section-title">Projects</h2>
+            </div>
+            <div class="project-list">
+                <article class="project-card reveal">
+                    <div class="project-media">
+                        <video controls preload="none" playsinline
+                               aria-label="Countries Guesser — selecting country alliances on the world map"
+                               poster="{{url_for('static', filename='img/countries-guesser.jpg')}}">
+                            <source src="{{url_for('static', filename='video/country-alliances-selection.mp4')}}"
+                                    type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">
+                            <a href="https://www.countriesguesser.com/" target="_blank"
+                               rel="noopener">Countries Guesser</a>
+                        </h3>
+                        <p class="project-text">Geographic online strategy game that helps to study the geography of the countries of the world,
+                            neighboring countries, flags and parts of the world in a game format. Choose eight different
+                            alliances of countries on the map, as well as four trap-countries for your opponent. The computer or
+                            your friend (depends on the selected game mode) will also choose the appropriate number of alliances
+                            of countries and trap-countries. The attempts to guess the countries take place in turn. The one who
+                            guesses the opponent's country gets an extra try. The one who guesses all the alliances of the
+                            opponent's countries first wins.</p>
+                        <a class="project-link" href="https://www.countriesguesser.com/" target="_blank"
+                           rel="noopener">countriesguesser.com
+                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"
+                                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 9v3.5a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1H7"/>
+                                <path d="M10 2h4v4"/>
+                                <path d="M14 2 7.5 8.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card reveal reveal-delay-1">
+                    <a class="project-media" href="https://www.worldcountriesquiz.com/" target="_blank"
+                       rel="noopener">
+                        <img src="{{url_for('static', filename='img/world-countries-quiz.jpg')}}"
+                             alt="World Countries And Quizzes — world map with country flags and a country information card" loading="lazy">
+                    </a>
+                    <div class="project-body">
+                        <h3 class="project-title">
+                            <a href="https://www.worldcountriesquiz.com/" target="_blank"
+                               rel="noopener">World Countries And Quizzes</a>
+                        </h3>
+                        <p class="project-text">Project which is developed for learning Geography and World Countries. Here you can find all
+                            countries of the world on a map, brief information about selected countries, links to Wikipedia
+                            pages of a specific country. It is also possible to take various quizzes with specific difficulty
+                            levels: Very Easy, Easy, Normal, Hard.</p>
+                        <a class="project-link" href="https://www.worldcountriesquiz.com/" target="_blank"
+                           rel="noopener">worldcountriesquiz.com
+                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"
+                                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 9v3.5a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1H7"/>
+                                <path d="M10 2h4v4"/>
+                                <path d="M14 2 7.5 8.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- ============================= CONTACTS ============================= -->
-    <section id="contacts" class="section">
+    <section id="contacts" class="section section--soft">
         <div class="container-xl">
             <div class="section-head reveal">
                 <span class="section-icon">

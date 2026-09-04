@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Dmytro Solovei — personal site
+   Dima Solovei — personal site
    Design system: navy + sky, generous whitespace, soft elevation.
    Built on top of Bootstrap 5; Bootstrap components are re-skinned below so
    that markup which still uses .btn-secondary / .card / .carousel picks up the
@@ -367,6 +367,23 @@ a:hover > .hover-effect,
     opacity: 1;
     background: #fff;
     box-shadow: var(--shadow-xs);
+}
+
+/* Just above the two-row breakpoint the 5-item nav runs out of room — the
+   longer Ukrainian labels wrap the whole link row. Tighten the spacing so it
+   stays on one line down to 992px. */
+@media (min-width: 992px) and (max-width: 1099.98px) {
+    .nav-inner {
+        gap: .6rem;
+    }
+
+    .nav-links .nav-link {
+        padding: .5rem .5rem;
+    }
+
+    .nav-cta {
+        padding: .5rem .8rem !important;
+    }
 }
 
 /* Horizontal scroll instead of a broken wrap on narrow screens */
@@ -802,7 +819,7 @@ main {
 .edu-card {
     position: relative;
     padding: 1.6rem 1.6rem 1.6rem 3.9rem;
-    text-align: left;
+    text-align: justify;
     transition: transform .22s ease, box-shadow .22s ease;
 }
 
@@ -909,7 +926,7 @@ main {
     font-size: 1.08rem;
     font-weight: 700;
     color: var(--c-ink);
-    text-align: left;
+    text-align: justify;
     margin: 0;
 }
 
@@ -931,7 +948,7 @@ main {
     font-weight: 400;
     font-size: .96rem;
     line-height: 1.7;
-    text-align: left;
+    text-align: justify;
     color: var(--c-body);
     margin: 0 0 .75rem;
 }
@@ -1093,8 +1110,119 @@ main {
     flex: none;
 }
 
+/* Geography uses an inline SVG rather than another PNG glyph. */
+.hobby-card svg {
+    width: 2rem;
+    height: 2rem;
+    flex: none;
+    color: var(--c-ink-2);
+}
+
 /* --------------------------------------------------------------------------
-   12. Contacts
+   12. Projects
+   -------------------------------------------------------------------------- */
+/* .section-icon only styles an <img>; the Projects head uses an inline SVG. */
+.section-icon svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    opacity: .85;
+    color: var(--c-ink-2);
+}
+
+.project-list {
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 2.25rem);
+    max-width: 58rem;
+    margin: 0 auto;
+}
+
+.project-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow .22s ease, border-color .22s ease;
+}
+
+.project-card:hover {
+    border-color: var(--c-brand-light);
+    box-shadow: var(--shadow-md);
+}
+
+.project-media {
+    display: block;
+    background: var(--c-bg-dark);
+    border-bottom: 1px solid var(--c-line);
+}
+
+.project-media img,
+.project-media video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* The poster is 2.19:1 but the clip is 16:9 — contain letterboxes the poster
+   against the navy backing instead of cropping the game's edge controls. */
+.project-media video {
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+}
+
+.project-body {
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.project-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+    font-weight: 700;
+    color: var(--c-ink);
+    margin: 0 0 .6rem;
+}
+
+.project-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.project-title a:hover {
+    color: var(--c-brand);
+}
+
+.project-text {
+    font-size: .96rem;
+    line-height: 1.7;
+    text-align: justify;
+    color: var(--c-body);
+    margin: 0 0 .9rem;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    font-family: var(--font-display);
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--c-brand);
+    text-decoration: none;
+}
+
+.project-link:hover {
+    color: var(--c-brand-dark);
+    text-decoration: underline;
+}
+
+.project-link svg {
+    width: .85rem;
+    height: .85rem;
+    flex: none;
+}
+
+/* --------------------------------------------------------------------------
+   13. Contacts
    -------------------------------------------------------------------------- */
 .contact-grid {
     display: grid;
@@ -1151,7 +1279,7 @@ main {
 }
 
 /* --------------------------------------------------------------------------
-   13. Footer
+   14. Footer
    -------------------------------------------------------------------------- */
 .site-footer {
     flex: none;
@@ -1231,7 +1359,7 @@ main {
 }
 
 /* --------------------------------------------------------------------------
-   14. Back-to-top
+   15. Back-to-top
    -------------------------------------------------------------------------- */
 .to-top {
     display: inline-flex;
@@ -1241,7 +1369,7 @@ main {
 }
 
 /* --------------------------------------------------------------------------
-   15. Forms (contact form templates)
+   16. Forms (contact form templates)
    -------------------------------------------------------------------------- */
 .form-control {
     border-radius: var(--radius-sm);
@@ -1268,7 +1396,7 @@ main {
 }
 
 /* --------------------------------------------------------------------------
-   16. Scroll reveal
+   17. Scroll reveal
    -------------------------------------------------------------------------- */
 .js .reveal {
     opacity: 0;
@@ -1313,7 +1441,7 @@ main {
 }
 
 /* --------------------------------------------------------------------------
-   17. Legacy aliases — kept so older markup does not regress
+   18. Legacy aliases — kept so older markup does not regress
    -------------------------------------------------------------------------- */
 .color-grey {
     color: var(--c-muted);

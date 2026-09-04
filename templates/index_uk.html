@@ -16,7 +16,7 @@
                 <div class="hero-copy reveal">
                     <h3 class="eyebrow"><span class="dot"></span>Senior Backend Java Software Developer</h3>
                     <h1 class="hero-title">Про Мене</h1>
-                    <p class="hero-lead" style="text-align: justify;">Привіт, мене звуть Дмитро. Я старший
+                    <p class="hero-lead" style="text-align: justify;">Привіт, мене звуть Діма. Я старший
                         розробник Java із досвідом понад {{ work_experience }} років. Я працював над розробкою
                         програмного забезпечення для атомної промисловості, систем GPS, телефонії, а також у сфері
                         громадської безпеки (поліція, аварійна служба та ін.).
@@ -30,13 +30,14 @@
                         <a href="#experience" class="pill-link">Досвід</a>
                         <a href="#certificates" class="pill-link">Сертифікати</a>
                         <a href="#hobbies" class="pill-link">Хобі</a>
+                        <a href="#projects" class="pill-link">Проекти</a>
                         <a href="#contacts" class="pill-link">Зв'язатись</a>
                     </div>
                 </div>
                 <figure class="hero-figure reveal reveal-delay-1">
                     <img src="{{ url_for('static', filename='img/Dmytro_Solovei.jpg') }}"
                          class="hero-photo"
-                         alt="Dmytro Solovei photo" loading="lazy">
+                         alt="Dima Solovei photo" loading="lazy">
                 </figure>
             </div>
         </div>
@@ -214,12 +215,98 @@
                     <img src="{{url_for('static', filename='img/war-history.png')}}" alt="Історія Другої Світової Війни">
                     <span>Історія Другої Світової Війни</span>
                 </div>
+                <div class="hobby-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9 3 3 5.5v15L9 18l6 3 6-2.5v-15L15 6 9 3Z"/>
+                        <path d="M9 3v15"/>
+                        <path d="M15 6v15"/>
+                    </svg>
+                    <span>Географія</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= PROJECTS ============================= -->
+    <section id="projects" class="section">
+        <div class="container-xl">
+            <div class="section-head reveal">
+                <span class="section-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M3 12h18"/>
+                        <path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/>
+                    </svg>
+                </span>
+                <h2 class="section-title">Проекти</h2>
+            </div>
+            <div class="project-list">
+                <article class="project-card reveal">
+                    <div class="project-media">
+                        <video controls preload="none" playsinline
+                               aria-label="Countries Guesser — вибір союзів країн на мапі світу"
+                               poster="{{url_for('static', filename='img/countries-guesser.jpg')}}">
+                            <source src="{{url_for('static', filename='video/country-alliances-selection.mp4')}}"
+                                    type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">
+                            <a href="https://www.countriesguesser.com/" target="_blank"
+                               rel="noopener">Countries Guesser</a>
+                        </h3>
+                        <p class="project-text">Географічна онлайн гра-стратегія, яка допомагає вивчати географію країн світу, сусідніх країн,
+                            прапорів та частин світу в ігровому форматі. Виберіть вісім різних союзів країн на мапі, а також
+                            чотири країни-пастки для вашого суперника. Комп'ютер або ваш друг (залежно від обраного режиму гри)
+                            також вибере відповідну кількість союзів країн та країн-пасток. Спроби вгадати країни відбуваються
+                            по черзі. Той, хто вгадає країну суперника, отримує додаткову спробу. Перемагає той, хто першим
+                            вгадає всі союзи країн суперника.</p>
+                        <a class="project-link" href="https://www.countriesguesser.com/" target="_blank"
+                           rel="noopener">countriesguesser.com
+                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"
+                                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 9v3.5a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1H7"/>
+                                <path d="M10 2h4v4"/>
+                                <path d="M14 2 7.5 8.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card reveal reveal-delay-1">
+                    <a class="project-media" href="https://www.worldcountriesquiz.com/" target="_blank"
+                       rel="noopener">
+                        <img src="{{url_for('static', filename='img/world-countries-quiz.jpg')}}"
+                             alt="World Countries And Quizzes — мапа світу з прапорами країн та картка з інформацією про країну" loading="lazy">
+                    </a>
+                    <div class="project-body">
+                        <h3 class="project-title">
+                            <a href="https://www.worldcountriesquiz.com/" target="_blank"
+                               rel="noopener">World Countries And Quizzes</a>
+                        </h3>
+                        <p class="project-text">Це проект, який розроблений для вивчення Географії та Країн Світу. Тут ви можете знайти всі країни
+                            світу на мапі, коротку інформацію про обрані країни, посилання на сторінки Вікіпедії певної країни.
+                            Також є можливість пройти різні вікторини з певними рівнями складності: Дуже Легко, Легко,
+                            Нормально, Важко.</p>
+                        <a class="project-link" href="https://www.worldcountriesquiz.com/" target="_blank"
+                           rel="noopener">worldcountriesquiz.com
+                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"
+                                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 9v3.5a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1H7"/>
+                                <path d="M10 2h4v4"/>
+                                <path d="M14 2 7.5 8.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- ============================= CONTACTS ============================= -->
-    <section id="contacts" class="section">
+    <section id="contacts" class="section section--soft">
         <div class="container-xl">
             <div class="section-head reveal">
                 <span class="section-icon">

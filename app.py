@@ -29,7 +29,8 @@ SKILLS_DICT = {
     "Operating Systems": ["Microsoft Windows", "Linux"],
     "Application/Web Servers": ["Tomcat"],
     "Cloud": ["Microsoft Azure", "AWS"],
-    "Development Tools": ["IntelliJ IDEA", "Eclipse", "PyCharm"]
+    "Development Tools": ["IntelliJ IDEA", "Eclipse", "PyCharm"],
+    "AI Tools & Frameworks": ["Spring AI", "Claude Code"]
 }
 
 

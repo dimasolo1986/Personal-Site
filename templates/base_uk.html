@@ -25,12 +25,12 @@
     <!-- Font Awesome CSS -->
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="Solovei Dmytro Software Developer Personal Site Соловей Дмитро Персональний сайт">
+    <meta name="description" content="Solovei Dima Software Developer Personal Site Соловей Діма Персональний сайт">
     <meta name="google-site-verification" content="MP6knESgg8huKzPQW-O0QlR-ycXBR18TNBEV9Q0pVOE" />
     <!-- bundle already contains Popper + all of Bootstrap's JS -->
     <script defer src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     <script defer src="https://kit.fontawesome.com/5ab6aa530f.js" crossorigin="anonymous"></script>
-    <title>Соловей Дмитро - Персональний Сайт</title>
+    <title>Соловей Діма - Персональний Сайт</title>
 </head>
 {% endblock %}
 <body>
@@ -40,8 +40,8 @@
         <div class="container-xl nav-inner">
             <a class="brand" href="{{ url_for('home', lang=lang) }}">
                 <img class="logo hover-effect" src="{{ url_for('static', filename='logo/logo.png') }}"
-                     alt="Dmytro Solovei Logo">
-                <span class="brand-name font-sacramento">Dmytro Solovei</span>
+                     alt="Dima Solovei Logo">
+                <span class="brand-name font-sacramento">Dima Solovei</span>
             </a>
             <ul class="lang-switch">
                 <li><a href="{{ url_for('switch_lang', lang='uk') }}" class="nav-link is-active uk-lang"
@@ -57,6 +57,7 @@
                 <ul class="nav-links">
                     <li><a href="{{ url_for('home', lang=lang) }}" class="nav-link font-garamond">Головна</a></li>
                     <li><a href="#certificates" class="nav-link font-garamond">Сертифікати</a></li>
+                    <li><a href="#projects" class="nav-link font-garamond">Проекти</a></li>
                     <li><a href="#contacts" class="nav-link font-garamond">Зв'язатися</a></li>
                     <li><a href="{{ url_for('download', name='CV_Dmytro_Solovei.pdf') }}"
                            class="btn btn-secondary nav-cta">Завантажити Резюме</a></li>
@@ -69,10 +70,10 @@
 {% block footer %}
 <footer class="site-footer">
     <div class="container-xl footer-inner">
-        <p class="footer-copy">© {{ now.year }}, Дмитро Соловей</p>
+        <p class="footer-copy">© {{ now.year }}, Діма Соловей</p>
         <a href="{{ url_for('home', lang=lang) }}"><img class="footer-logo"
                                                         src="{{ url_for('static', filename='logo/logo.png') }}"
-                                                        alt="Dmytro Solovei Logo"></a>
+                                                        alt="Dima Solovei Logo"></a>
         <ul class="footer-social">
             <li><a href="mailto:solovei.dmytro@gmail.com" aria-label="Email">
                 <i class="fa fa-envelope footer-icons"></i>
@@ -82,9 +83,6 @@
             </a></li>
             <li><a href="https://www.facebook.com/DimaSolovei1986" aria-label="Facebook">
                 <i class="fa-brands fa-square-facebook footer-icons"></i>
-            </a></li>
-            <li><a href="skype:dimasolovey1986?chat" aria-label="Skype">
-                <i class="fa fa-skype footer-icons" aria-hidden="true"></i>
             </a></li>
             <li><a href="tg://resolve?domain=dimasolovei1986" aria-label="Telegram">
                 <i class="fa fa-telegram footer-icons" aria-hidden="true"></i>
