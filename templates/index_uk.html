@@ -19,7 +19,7 @@
                     <p class="hero-lead" style="text-align: justify;">Привіт, мене звуть Діма. Я старший
                         розробник Java із досвідом понад {{ work_experience }} років. Я працював над розробкою
                         програмного забезпечення для атомної промисловості, систем GPS, телефонії, а також у сфері
-                        громадської безпеки (поліція, аварійна служба та ін.).
+                        громадської безпеки (поліція, аварійна служба та ін.), кастомних AI-агентів.
                         Я захоплений створенням ефективних
                         програмних рішень для різних галузей. Маю здатність працювати як самостійно, так і в
                         команді. Я завжди прагну вчитися та бути в курсі останніх технологій і найкращих практик у
@@ -35,9 +35,12 @@
                     </div>
                 </div>
                 <figure class="hero-figure reveal reveal-delay-1">
-                    <img src="{{ url_for('static', filename='img/Dmytro_Solovei.jpg') }}"
-                         class="hero-photo"
-                         alt="Dima Solovei photo" loading="lazy">
+                    <div class="hero-photo-stack">
+                        <img src="{{ url_for('static', filename='img/Dmytro_Solovei.jpg') }}"
+                             class="hero-photo" alt="Dima Solovei photo" loading="lazy">
+                        <img src="{{ url_for('static', filename='img/Dmytro_Solovei_2.jpg') }}"
+                             class="hero-photo hero-photo--alt" alt="" aria-hidden="true" loading="lazy">
+                    </div>
                 </figure>
             </div>
         </div>
@@ -105,12 +108,31 @@
                 <h2 class="section-title">Досвід</h2>
             </div>
             <div class="timeline">
+                {% set tools_softserve_ai = "Java, Spring Boot, Spring AI, JavaScript, Redis, PgVector, Claude Code" %}
+                <article class="timeline-item reveal">
+                    <div class="job-head">
+                        <p class="job-title">SoftServe - Senior Intelligence Engineer</p>
+                        <p class="job-years">2026 - зараз</p>
+                    </div>
+                    <p class="job-description">Розробка, проєктування та тестування кастомних AI-агентів на основі
+                        Java Spring AI Framework з можливістю підключення до різних MCP-серверів, інструментів,
+                        векторних сховищ, суб-агентів та навичок (skills).</p>
+                    <p class="job-meta"><span class="job-meta-label">Клієнт:</span>
+                        Компанія США</p>
+                    <p class="job-meta"><span class="job-meta-label">Інструменти & Технології & Фреймворки:</span></p>
+                    <ul class="tag-list">
+                        {% for tool in tools_softserve_ai.split(',') %}
+                        <li class="tag">{{ tool.strip() }}</li>
+                        {% endfor %}
+                    </ul>
+                </article>
+
                 {% set tools_softserve_now = "Java, SpringBoot, Python, Robot Framework, Maven, Postman, GitHub, Microsoft Azure, Docker, Confluence, Scrum" %}
                 <article class="timeline-item reveal">
                     <div class="job-head">
                         <p class="job-title">SoftServe - Senior Java
                             Software Developer</p>
-                        <p class="job-years">2022 - зараз</p>
+                        <p class="job-years">2022 - 2026</p>
                     </div>
                     <p class="job-description">Розробка додатків для SIP-телефонії та
                         інструментів тестування.

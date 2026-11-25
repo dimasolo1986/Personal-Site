@@ -677,6 +677,40 @@ main {
     transform: translateY(-6px) scale(1.01);
 }
 
+/* Two hero photos cross-fading every 3s (6s cycle) */
+.hero-photo-stack {
+    position: relative;
+    z-index: 1;
+    transition: transform .35s cubic-bezier(.2, .7, .3, 1);
+}
+
+.hero-photo-stack:hover {
+    transform: translateY(-6px) scale(1.01);
+}
+
+.hero-photo-stack .hero-photo:hover {
+    transform: none;
+}
+
+.hero-photo--alt {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: hero-photo-swap 6s ease-in-out infinite;
+}
+
+@keyframes hero-photo-swap {
+    0%, 42% { opacity: 0; }
+    50%, 92% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-photo--alt { animation: none; }
+}
+
 @media (max-width: 991.98px) {
     .hero-grid {
         grid-template-columns: 1fr;
